@@ -50,7 +50,7 @@
 
       apps.${system}.default = {
         type = "app";
-        program = "${sxwm}/bin/${name}";
+        program = "${pkgs.lib.getExe sxwm}";
       };     
     };
 }
