@@ -8,16 +8,18 @@
   outputs = { self, nixpkgs, ... }:
     let
       system = "x86_64-linux";
+      name = "sxwm";
+      version = "1.7"
       pkgs = import nixpkgs { inherit system; };
 
     in {
       packages.${system}.default = pkgs.stdenv.mkDerivation {
-        pname = "sxwm";
-        version = "1.7";
+        pname = "${name}";
+        version = "${version}";
 
         src = pkgs.fetchFromGitHub {
           owner = "uint23";
-          repo = "sxwm";
+          repo = "${name}";
           tag = "v${version}";
           hash = "sha256-jpMa4NO78ttmr/VGJHjwOkGecwN4BSMvbCJFKjXd/ko=";
         };
