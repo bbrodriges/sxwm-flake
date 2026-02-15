@@ -3,25 +3,24 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-
-    sxwm-src = {
-      url = "https://github.com/uint23/sxwm/archive/v1.7.tar.gz";
-      flake = false;
-    };
   };
 
-  outputs = { self, nixpkgs, sxwm-src, ... }:
+  outputs = { self, nixpkgs, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
 
     in {
       packages.${system}.default = pkgs.stdenv.mkDerivation {
-
         pname = "sxwm";
         version = "1.7";
 
-        src = sxwm-src;
+        src = pkgs.fetchFromGitHub {
+          owner = "uint23";
+          repo = "${pname}";
+          tag = "v${version}";
+          hash = "sha256-jpMa4NO78ttmr/VGJHjwOkGecwN4BSMvbCJFKjXd/ko=";
+        };
 
         nativeBuildInputs = with pkgs; [
           xorg.libX11
@@ -39,7 +38,6 @@
           mkdir -p $out/bin
           cp sxwm $out/bin/
         '';
-
       };
     };
 }
