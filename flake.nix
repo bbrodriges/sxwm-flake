@@ -32,7 +32,7 @@
           xorg.libX11
           xorg.libXinerama
           xorg.libXcursor
-          xorg.Xorgproto
+          xorg.xorgproto
         ];
 
         buildPhase = ''
