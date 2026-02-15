@@ -9,7 +9,7 @@
     let
       system = "x86_64-linux";
       name = "sxwm";
-      version = "1.7"
+      version = "1.7";
       pkgs = import nixpkgs { inherit system; };
 
     in {
