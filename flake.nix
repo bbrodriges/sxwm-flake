@@ -26,6 +26,7 @@
         nativeBuildInputs = with pkgs; [
           xorg.libX11
           xorg.libXinerama
+          xorg.libXcursor
           libgcc
           gnumake
         ];
