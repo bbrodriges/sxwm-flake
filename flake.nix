@@ -9,23 +9,22 @@
     let
       system = "x86_64-linux";
       name = "sxwm";
-      version = "1.7";
+      ver = "1.7";
       pkgs = import nixpkgs { inherit system; };
 
       sxwm = pkgs.stdenv.mkDerivation {
         pname = name;
-        version = version;
+        version = ver;
 
         src = pkgs.fetchFromGitHub {
           owner = "uint23";
           repo = name;
-          rev = "v${version}";
+          rev = "v${ver}";
           hash = "sha256-Gytop4YkQdVaYXWyXmlHotEFnaA0O8CZUmqfIe8X2w=";
         };
 
         nativeBuildInputs = with pkgs; [
           pkg-config
-          # libgcc
           gnumake
         ];
 
