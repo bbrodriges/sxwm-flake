@@ -13,14 +13,13 @@
       pkgs = import nixpkgs { inherit system; };
 
       sxwm = pkgs.stdenv.mkDerivation {
-        pname = "${name}";
-        version = "${version}";
+        pname = name;
+        version = version;
 
         src = pkgs.fetchFromGitHub {
           owner = "uint23";
-          repo = "${name}";
-          tag = "v${version}";
-          hash = "sha256-Gytop4YkQdVaYXWyXmlHotEFnaA0O8CZUmqfIe8X2w=";
+          repo = name;
+          rev = "v${version}";
         };
 
         nativeBuildInputs = with pkgs; [
