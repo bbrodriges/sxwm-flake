@@ -12,8 +12,7 @@
       version = "1.7";
       pkgs = import nixpkgs { inherit system; };
 
-    in {
-      packages.${system}.default = pkgs.stdenv.mkDerivation {
+      sxwm = pkgs.stdenv.mkDerivation {
         pname = "${name}";
         version = "${version}";
 
@@ -41,5 +40,13 @@
           cp sxwm $out/bin/
         '';
       };
+
+    in {
+      packages.default = sxwm;
+
+      apps.default = {
+        type = "app";
+        program = "${sxwm}/bin/${name}";
+      };     
     };
 }
