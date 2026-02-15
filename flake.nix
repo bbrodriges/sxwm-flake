@@ -42,9 +42,9 @@
       };
 
     in {
-      packages.default = sxwm;
+      packages.${system}.default = sxwm;
 
-      apps.default = {
+      apps.${system}.default = {
         type = "app";
         program = "${sxwm}/bin/${name}";
       };     
