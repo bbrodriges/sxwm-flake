@@ -21,7 +21,7 @@
           owner = "uint23";
           repo = "${name}";
           tag = "v${version}";
-          hash = "sha256-jpMa4NO78ttmr/VGJHjwOkGecwN4BSMvbCJFKjXd/ko=";
+          hash = "sha256-Gytop4YkQdVaYXWyXmlHotEFnaA0O8CZUmqfIe8X2w=";
         };
 
         nativeBuildInputs = with pkgs; [
