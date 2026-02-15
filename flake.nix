@@ -24,11 +24,15 @@
         };
 
         nativeBuildInputs = with pkgs; [
+          libgcc
+          gnumake
+        ];
+
+        buildInputs = with pkgs; [
           xorg.libX11
           xorg.libXinerama
           xorg.libXcursor
-          libgcc
-          gnumake
+          xorg.Xorgproto
         ];
 
         buildPhase = ''
