@@ -9,18 +9,17 @@
     let
       system = "x86_64-linux";
       name = "sxwm";
-      ver = "1.7";
+      version = "1.7";
       pkgs = import nixpkgs { inherit system; };
 
       sxwm = pkgs.stdenv.mkDerivation {
         pname = name;
-        version = ver;
+        version = version;
 
         src = pkgs.fetchFromGitHub {
           owner = "uint23";
           repo = name;
-          rev = "v${ver}";
-          hash = "sha256-Gytop4YkQdVaYXWyXmlHotEFnaA0O8CZUmqfIe8X2w=";
+          rev = "v${version}";
         };
 
         nativeBuildInputs = with pkgs; [
