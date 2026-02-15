@@ -17,7 +17,7 @@
 
         src = pkgs.fetchFromGitHub {
           owner = "uint23";
-          repo = "${pname}";
+          repo = "sxwm";
           tag = "v${version}";
           hash = "sha256-jpMa4NO78ttmr/VGJHjwOkGecwN4BSMvbCJFKjXd/ko=";
         };
