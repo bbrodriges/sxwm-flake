@@ -25,7 +25,7 @@
 
         nativeBuildInputs = with pkgs; [
           pkg-config
-          libgcc
+          # libgcc
           gnumake
         ];
 
